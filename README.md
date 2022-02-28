@@ -1,7 +1,7 @@
 # rice
 They are hella messy but here u go
 
-i3
+i3  
 polybar
 rofi
 rofi-power-menu
