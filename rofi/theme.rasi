@@ -1,0 +1,12 @@
+* {
+  bg: #131020;
+  fg: #96cdfb;
+  fg-alt: #ffffff;
+
+  background-color: @bg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
