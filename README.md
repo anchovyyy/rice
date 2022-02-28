@@ -9,14 +9,14 @@ greenclip
 dunst  
 picom-ibhagwan-git  
 kitty  
+Dracula Icons  
+all the Nerd Fonts  
 Catppuccin  
   - Kitty  
   - GTK  
   - Grub  
   - btop  
   - cava  
-Dracula Icons  
-all the Nerd Fonts  
 
 credits aka things i stole and edited  
 top polybar: https://github.com/AlphaTechnolog/bspwm-dotfiles-v2  
