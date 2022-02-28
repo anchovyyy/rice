@@ -10,11 +10,11 @@ dunst
 picom-ibhagwan-git  
 kitty  
 Catppuccin  
-    Kitty  
-    GTK  
-    Grub  
-    btop  
-    cava  
+  - Kitty  
+  - GTK  
+  - Grub  
+  - btop  
+  - cava  
 Dracula Icons  
 all the Nerd Fonts  
 
