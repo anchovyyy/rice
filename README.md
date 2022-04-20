@@ -8,15 +8,16 @@ rofi-power-menu
 greenclip  
 dunst  
 picom-ibhagwan-git  
-kitty  
-Dracula Icons  
+kitty    
 all the Nerd Fonts  
 Catppuccin  
   - Kitty  
   - GTK  
   - Grub  
   - btop  
-  - cava  
+  - cava
+  - cursor
+  - icons  
 
 credits aka things i stole and edited  
 top polybar: https://github.com/AlphaTechnolog/bspwm-dotfiles-v2  
