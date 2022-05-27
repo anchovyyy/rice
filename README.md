@@ -18,7 +18,3 @@ Catppuccin
   - cava
   - cursor
   - icons  
-
-credits aka things i stole and edited  
-top polybar: https://github.com/AlphaTechnolog/bspwm-dotfiles-v2  
-rofi: some guy in the r/unixporn discord who I cant find  
