@@ -1,0 +1,108 @@
+* {
+    all: unset; //Unsets everything so you can style everything from scratch
+    font-family: "JetBrainsMono Nerd Font";
+  
+}
+  
+  //Global Styles
+.menu {
+background-color: #1e1e2e;
+color: #D9E0EE;
+}
+
+.powermenu{
+font-size: 32px;
+padding: 0px 0px 0px 45px;
+}
+.appmenu{
+font-size: 36px;
+padding: 0px 10px 0px 0px;
+
+    }
+// METRIC LOOKS
+.metric scale trough highlight {
+    all: unset;
+    color: #000000;
+    background: #96cdfb;
+    border-radius: 50px;
+  }
+  .metric scale trough {
+    all: unset;
+    background-color: #302D41;
+    border-radius: 50px;
+    min-height: 20px;
+    min-width: 200px;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+  
+  .metric .label {
+    color: #96cdfb;
+    font-size: xx-large;
+  }
+  
+
+/** Weather ***************************************/
+.iconweather {
+	font-family: Iosevka Nerd Font;
+	font-size : 100px;
+	font-weight : normal;
+	margin : 0px 0px 0px 0px;
+}
+
+.label_temp {
+	color : #96cdfb;
+	font-size : 40px;
+	font-weight : bold;
+	margin : 0px 0px 0px 0px;
+}
+
+.label_stat {
+	color : #96cdfb;
+	font-size : 18px;
+	font-weight : bold;
+  margin : 0px 0px 0px 0px;
+}
+
+.label_quote {
+	color : #E5E5E5;
+	font-size : 18px;
+	font-weight : normal;
+}
+
+.clockbox {
+	margin : 0px 0px 0px 0px;
+  color: #D9E0EE;
+}
+
+.time {
+	font-size : 24px;
+	font-weight : bold;
+}
+
+.date {
+	font-size : 24px;
+	font-weight : bold;
+}
+
+
+.cal {
+  color: #D9E0EE;
+  font-family: JetBrainsMono Nerd Font;
+  padding: 5px;
+  padding-bottom: 1px;
+  margin-left: 20px;
+  font-size : 20px;
+}
+
+.discord, .terminal, .files, .brave, .spotify {
+  background-repeat: no-repeat;
+	background-size: 32px;
+	min-height: 32px;
+	min-width: 32px;
+}
+
+
+.up{
+  font-size: 40px;
+}

@@ -1,0 +1,86 @@
+(defwindow menu
+           :monitor 0
+           :geometry (geometry :x "10px"
+                               :y "-50px"
+                               :width "900px"
+                               :height "350px"
+                               :anchor "bottom left")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore false
+  (main))
+
+  (defwidget powermenu []
+    (box :orientation "h" :space-evenly true :class "powermenu" :halign "start" :valign "center" :spacing 30
+      (button :style "color: #d8dee9;" :onclick "systemctl poweroff" "")
+      (button :style "color: #e5e9f0;" :onclick "systemctl reboot" "")
+      (button :style "color: #eceff4;" :onclick "systemctl reboot --firmware" "拉")
+      (button :style "color: #e8e8e8;" :onclick "i3-msg exit" "")
+      (button :style "color: #ffffff;" :class "up" :timeout "10000000000000000000h" :onclick "kitty --hold 'yay'" "ﰵ")))
+
+(defwidget appmenu []
+    (box :orientation "h" :space-evenly true :class "appmenu" :spacing "30" :halign "center" :valign "center"
+        (button :style "background-image: url('images/terminal.svg');" :class "terminal" :onclick "kitty&" )
+        (button :style "background-image: url('images/files.svg');" :class "files" :onclick "thunar&" )
+        (button :style "background-image: url('images/brave.svg');" :class "brave" :onclick "brave&" )
+        (button :style "background-image: url('images/discord.svg');" :class "discord" :onclick "discord&" )
+        (button :style "background-image: url('images/spotify.svg');" :class "spotify" :onclick "spotify&" )))
+
+(defwidget sys[]
+  (box :class "cpu" :orientation "v" :space-evenly false :halign "center" :valign "center"
+    (metric :label "﬙" :value {EWW_CPU.avg} :onchange "")
+    (metric :label "" :value {EWW_RAM.used_mem_perc} :onchange "")
+    (metric :label "" :value {(EWW_DISK["/"].free / EWW_DISK["/"].total) * 100} :onchange "")))
+
+
+(defpoll TIME :interval "5s" `date +\"%I:%M %p\"`)
+(defpoll DATE :interval "5s" `date +\"%A, %B %d\"`)
+(defpoll calendar_day :interval "20h" "date '+%d'")
+(defpoll calendar_year :interval "20h" "date '+%Y'")
+
+;; Weather vars
+(defpoll ICON :interval "15m" `scripts/weather_info --icon`)
+(defpoll STAT :interval "15m" `scripts/weather_info --stat`)
+(defpoll TEMP :interval "15m" `scripts/weather_info --temp`)
+(defpoll HEX :interval "15m" `scripts/weather_info --hex`)
+(defpoll QUOTE :interval "15m" `scripts/weather_info --quote`)
+(defpoll QUOTE2 :interval "15m" `scripts/weather_info --quote2`)
+
+;; weather
+;; weather
+(defwidget weather [] 
+	(box :class "genwin" 
+		(box :orientation "h" :spacing 50 :space-evenly "true" :halign "end"
+			(box :orientation "v"
+				(label :class "iconweather" :halign "center" :style "color: ${HEX};" :text ICON))
+			(box :orientation "v" :spacing 0 :halign "center"
+			(label :class "label_temp" :halign "center" :text TEMP)	
+      (label :class "label_stat" :halign "center" :text STAT)
+				))))
+(defwidget time[]
+			(box :class "clockbox" :orientation "v" :spacing 0 :valign "start" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+			(label :class "date" :halign "center" :wrap "true" :limit-width 25 :text DATE)	
+      (label :class "time" :halign "center" :wrap "true" :limit-width 25 :text TIME)))
+
+(defwidget cal []
+  (calendar :halign "center" :valign "center" :class "cal" :day calendar_day :year calendar_year))
+
+(defwidget mid []
+(box :orientation "v"
+    (appmenu)
+    (sys)
+    (powermenu)))
+
+(defwidget main []
+    (box :orientation "h" 
+        (left)
+        (mid)
+        (cal)))
+(defwidget left []
+    (box :orientation "v" :valign "center" :halign "center"
+        (time)
+        (weather)))
+        (defwidget metric [label value onchange]
+            (box :orientation "h" :class "metric" :space-evenly false
+              (box :class "label" label)
+              (scale :min 0 :max 101 :active {onchange != ""} :value value :onchange onchange)))
