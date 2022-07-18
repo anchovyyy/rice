@@ -10,6 +10,7 @@ dunst
 picom-ibhagwan-git  
 kitty    
 all the Nerd Fonts  
+eww
 Catppuccin  
   - Kitty  
   - GTK  
